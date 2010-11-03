@@ -21,7 +21,14 @@ import grokcore.security.interfaces
 import grokcore.view.interfaces
 
 
-class IGrokcoreJSONAPI(grokcore.component.interfaces.IBaseClasses,
-                       grokcore.security.interfaces.IBaseClasses,
-                       grokcore.view.interfaces.IBaseClasses):
+class IBaseClasses(grokcore.component.interfaces.IBaseClasses,
+                   grokcore.security.interfaces.IBaseClasses,
+                   grokcore.view.interfaces.IBaseClasses):
     JSON = Attribute("Base class for JSON methods.")
+    
+
+class IGrokcoreJSONAPI(grokcore.component.interfaces.IGrokcoreComponentAPI,
+                       grokcore.security.interfaces.IGrokcoreSecurityAPI,
+                       grokcore.view.interfaces.IGrokcoreViewAPI,
+                       IBaseClasses):
+    pass
