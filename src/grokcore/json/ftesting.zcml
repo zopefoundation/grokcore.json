@@ -6,6 +6,6 @@
    package="grokcore.json">
 
   <include package="grokcore.json" />
-  <grok:grok package="grok.ftests" />
+  <grok:grok package=".ftests" />
 
 </configure>
