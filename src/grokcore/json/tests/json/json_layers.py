@@ -3,7 +3,8 @@
 The JSON grokker registers a view for each method of the JSON class. These
 "method" views support layers and skins.
 
-  >>> grok.testing.grok(__name__)
+  >>> from grokcore.json import testing
+  >>> testing.grok(__name__)
   >>> mammoth = Mammoth()
   >>> from zope.component import getMultiAdapter
   >>> from zope.publisher.browser import TestRequest

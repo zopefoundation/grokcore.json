@@ -14,10 +14,8 @@ JSON views answer a special content-type::
 
 import grokcore.json as grok
 
-
 class Cave(grok.Context):
     pass
-
 
 class CaveJSON(grok.JSON):
     def show(self):
