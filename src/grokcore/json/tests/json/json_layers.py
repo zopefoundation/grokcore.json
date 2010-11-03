@@ -31,7 +31,7 @@ The 'another' view on the default skin, not available on the my_json::
   >>> view = getMultiAdapter((mammoth, jsonlayer_request), name='public')
   Traceback (most recent call last):
   ...
-  ComponentLookupError: ((<grok.tests.json.json_layers.Mammoth object at ...>,
+  ComponentLookupError: ((<grokcore.json.tests.json.json_layers.Mammoth object at ...>,
   <zope.publisher.browser.TestRequest instance URL=http://127.0.0.1>),
   <InterfaceClass zope.interface.Interface>, 'public')
 
@@ -41,7 +41,7 @@ the my_json skin::
   >>> view = getMultiAdapter((mammoth, request), name='another')
   Traceback (most recent call last):
   ...
-  ComponentLookupError: ((<grok.tests.json.json_layers.Mammoth object at ...>,
+  ComponentLookupError: ((<grokcore.json.tests.json.json_layers.Mammoth object at ...>,
   <zope.publisher.browser.TestRequest instance URL=http://127.0.0.1>),
   <InterfaceClass zope.interface.Interface>, 'another')
 

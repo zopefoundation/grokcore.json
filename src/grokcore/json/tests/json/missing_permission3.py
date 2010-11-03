@@ -2,7 +2,8 @@
 An undefined permission that's never used (because it's being shadowed
 by a method-level directive) doesn't raise an error:
 
-  >>> grok.testing.grok(__name__)
+  >>> from grokcore.json import testing
+  >>> testing.grok(__name__)
 
 """
 

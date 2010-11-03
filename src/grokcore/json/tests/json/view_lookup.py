@@ -27,7 +27,7 @@ methods with names that start with an underscore are not::
   >>> view = getMultiAdapter((mammoth, request), name='_private')
   Traceback (most recent call last):
   ...
-  ComponentLookupError: ((<grok.tests.json.view_lookup.Mammoth object at ...>,
+  ComponentLookupError: ((<grokcore.json.tests.json.view_lookup.Mammoth object at ...>,
   <zope.publisher.browser.TestRequest instance URL=http://127.0.0.1>),
   <InterfaceClass zope.interface.Interface>, '_private')
 
@@ -38,7 +38,7 @@ been fixed::
   >>> view = getMultiAdapter((mammoth, request), name='__call__')
   Traceback (most recent call last):
   ...
-  ComponentLookupError: ((<grok.tests.json.view_lookup.Mammoth object at ...>,
+  ComponentLookupError: ((<grokcore.json.tests.json.view_lookup.Mammoth object at ...>,
   <zope.publisher.browser.TestRequest instance URL=http://127.0.0.1>),
   <InterfaceClass zope.interface.Interface>, '__call__')
 
@@ -48,14 +48,14 @@ baseclass (BrowserPage) are not registered as views::
   >>> view = getMultiAdapter((mammoth, request), name='browserDefault')
   Traceback (most recent call last):
   ...
-  ComponentLookupError: ((<grok.tests.json.view_lookup.Mammoth object at ...>,
+  ComponentLookupError: ((<grokcore.json.tests.json.view_lookup.Mammoth object at ...>,
   <zope.publisher.browser.TestRequest instance URL=http://127.0.0.1>),
   <InterfaceClass zope.interface.Interface>, 'browserDefault')
 
   >>> view = getMultiAdapter((mammoth, request), name='publishTraverse')
   Traceback (most recent call last):
   ...
-  ComponentLookupError: ((<grok.tests.json.view_lookup.Mammoth object at ...>,
+  ComponentLookupError: ((<grokcore.json.tests.json.view_lookup.Mammoth object at ...>,
   <zope.publisher.browser.TestRequest instance URL=http://127.0.0.1>),
   <InterfaceClass zope.interface.Interface>, 'publishTraverse')
 
