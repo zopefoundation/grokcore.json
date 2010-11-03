@@ -2,13 +2,11 @@ import re
 import unittest
 from pkg_resources import resource_listdir
 from zope.testing import doctest, cleanup, renormalizing
-import zope.component.eventtesting
 
-def setUpZope(test):
-    zope.component.eventtesting.setUp(test)
 
 def cleanUpZope(test):
     cleanup.cleanUp()
+
 
 checker = renormalizing.RENormalizing([
     # str(Exception) has changed from Python 2.4 to 2.5 (due to
@@ -17,6 +15,7 @@ checker = renormalizing.RENormalizing([
     (re.compile(r"ConfigurationExecutionError: <class '([\w.]+)'>:"),
                 r'ConfigurationExecutionError: \1:'),
     ])
+
 
 def suiteFromPackage(name):
     files = resource_listdir(__name__, name)
@@ -29,9 +28,8 @@ def suiteFromPackage(name):
         if filename == '__init__.py':
             continue
 
-        dottedname = 'grok.tests.%s.%s' % (name, filename[:-3])
+        dottedname = 'grokcore.json.tests.%s.%s' % (name, filename[:-3])
         test = doctest.DocTestSuite(dottedname,
-                                    setUp=setUpZope,
                                     tearDown=cleanUpZope,
                                     checker=checker,
                                     optionflags=doctest.ELLIPSIS+
@@ -42,12 +40,7 @@ def suiteFromPackage(name):
 
 def test_suite():
     suite = unittest.TestSuite()
-    for name in ['adapter', 'error', 'event', 'security', 'catalog',
-                 'zcml', 'utility', 'xmlrpc', 'json', 'container',
-                 'traversal', 'grokker', 'directive',
-                 'baseclass', 'application',
-                 'viewlet',
-                 'conflict']:
+    for name in ['json']:
         suite.addTest(suiteFromPackage(name))
     return suite
 
