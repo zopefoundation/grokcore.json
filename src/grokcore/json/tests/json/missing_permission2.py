@@ -9,8 +9,9 @@ before it can be used in @grok.require().
 
 """
 
-import grok
+import grokcore.json as grok
 import zope.interface
+
 
 class MissingPermission(grok.JSON):
     grok.context(zope.interface.Interface)
@@ -18,4 +19,3 @@ class MissingPermission(grok.JSON):
     @grok.require('doesnt.exist')
     def foo(self):
         pass
-

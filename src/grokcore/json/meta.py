@@ -14,7 +14,8 @@
 """JSON Grokking elements.
 """
 import martian
-import grok
+from grokcore.component import context
+from grokcore.security import require 
 from grokcore.json import JSON
 from grokcore.view import layer, make_checker
 from zope.component import provideAdapter
@@ -37,8 +38,8 @@ class JSONGrokker(martian.MethodGrokker):
 
     """
     martian.component(JSON)
-    martian.directive(grok.context)
-    martian.directive(grok.require, name='permission')
+    martian.directive(context)
+    martian.directive(require, name='permission')
     martian.directive(layer, default=IDefaultBrowserLayer)
 
     def execute(

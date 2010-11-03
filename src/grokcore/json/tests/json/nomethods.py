@@ -7,10 +7,12 @@
   its registration.
 
 """
-import grok
+import grokcore.json as grok
 
-class Caveman(grok.Model):
+
+class Caveman(grok.Context):
     pass
+
 
 class RemoteCaveman(grok.JSON):
     pass

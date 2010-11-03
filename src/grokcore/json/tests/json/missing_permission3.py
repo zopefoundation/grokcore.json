@@ -6,11 +6,13 @@ by a method-level directive) doesn't raise an error:
 
 """
 
-import grok
+import grokcore.json as grok
 import zope.interface
+
 
 class Permission(grok.Permission):
     grok.name('json.exists')
+
 
 class MissingPermission(grok.JSON):
     grok.context(zope.interface.Interface)
@@ -20,4 +22,3 @@ class MissingPermission(grok.JSON):
     @grok.require(Permission)
     def foo(self):
         pass
-

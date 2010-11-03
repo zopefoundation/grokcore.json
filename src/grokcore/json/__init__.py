@@ -12,10 +12,14 @@
 #
 ##############################################################################
 
+from grokcore.component import *
+from grokcore.security import *
+from grokcore.view import *
+
+
 from grokcore.json.components import JSON
 
-# Our __init__ provides the grok API directly so using 'import grok' is enough.
-from grok.interfaces import IGrokAPI
+from grokcore.json.interfaces import IGrokcoreJSONAPI
 from zope.interface import moduleProvides
-moduleProvides(IGrokAPI)
-__all__ = list(IGrokAPI)
+moduleProvides(IGrokcoreJSONAPI)
+__all__ = list(IGrokcoreJSONAPI)

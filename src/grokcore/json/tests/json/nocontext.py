@@ -11,7 +11,8 @@ whether it's hooked up at all:
   'context' directive.
 
 """
-import grok
+import grokcore.json as grok
+
 
 class TestJSON(grok.JSON):
 

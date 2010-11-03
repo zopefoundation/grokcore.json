@@ -60,10 +60,12 @@ baseclass (BrowserPage) are not registered as views::
   <InterfaceClass zope.interface.Interface>, 'publishTraverse')
 
 """
-import grok
+import grokcore.json as grok
 
-class Mammoth(grok.Model):
+
+class Mammoth(grok.Context):
     pass
+
 
 class MammothView(grok.JSON):
     grok.context(Mammoth)
@@ -73,6 +75,7 @@ class MammothView(grok.JSON):
 
     def another(self):
         return { 'another': 'grok'}
+
 
 class SecondMammothView(grok.JSON):
     grok.context(Mammoth)

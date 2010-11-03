@@ -19,14 +19,11 @@ provided here.
 
 """
 
-from zope import interface
 from zope.publisher.browser import BrowserPage
 from zope.publisher.publish import mapply
 
 import simplejson
 import grokcore.view
-import grokcore.site
-import grokcore.message
 from zope.interface import implements
 
 

@@ -68,13 +68,17 @@ Like with "normal" view, layers can aggregate view "methods"::
 
 """
 
-import grok
+import grokcore.json as grok
+from zope.publisher.interfaces.browser import IBrowserRequest
 
-class IMyJSONLayer(grok.IBrowserRequest):
+
+class IMyJSONLayer(IBrowserRequest):
     grok.skin('my_json')
 
-class Mammoth(grok.Model):
+
+class Mammoth(grok.Context):
     pass
+
 
 class MammothView(grok.JSON):
     grok.context(Mammoth)
@@ -84,6 +88,7 @@ class MammothView(grok.JSON):
 
     def public(self):
         return {'public': 'only availble on the default layer'}
+
 
 class AnotherMammothView(grok.JSON):
     grok.context(Mammoth)
@@ -95,9 +100,11 @@ class AnotherMammothView(grok.JSON):
     def another(self):
         return {'another': 'only available on my json layer'}
 
+
 class IMySecondJSONLayer(IMyJSONLayer):
     # Aggregates views on the first layer and adds more.
     grok.skin('my_second_json')
+
 
 class YetAnotherMammothView(grok.JSON):
     grok.context(Mammoth)
