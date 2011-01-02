@@ -1,10 +1,10 @@
 Changes
 *******
 
-1.1 (unreleased)
+1.1 (2011-01-02)
 ================
 
-- Nothing changed yet.
+- Fixed setup.py namespace issue.
 
 
 1.0 (2010-11-03)
