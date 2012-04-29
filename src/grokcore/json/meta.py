@@ -15,10 +15,10 @@
 """
 import martian
 from grokcore.component import context
+from grokcore.component import util
 from grokcore.security import require 
 from grokcore.json import JSON
 from grokcore.view import layer, make_checker
-from zope.component import provideAdapter
 from zope.interface import Interface
 from zope.publisher.interfaces.browser import IDefaultBrowserLayer
 
@@ -55,7 +55,7 @@ class JSONGrokker(martian.MethodGrokker):
 
         config.action(
             discriminator=('adapter', adapts, Interface, name),
-            callable=provideAdapter,
+            callable=util.provideAdapter,
             args=(method_view, adapts, Interface, name))
 
         config.action(
