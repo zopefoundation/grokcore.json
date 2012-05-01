@@ -14,9 +14,9 @@
 """JSON Grokking elements.
 """
 import martian
+import grokcore.component
 from grokcore.component import context
-from grokcore.component import util
-from grokcore.security import require 
+from grokcore.security import require
 from grokcore.json import JSON
 from grokcore.view import layer, make_checker
 from zope.interface import Interface
@@ -55,7 +55,7 @@ class JSONGrokker(martian.MethodGrokker):
 
         config.action(
             discriminator=('adapter', adapts, Interface, name),
-            callable=util.provideAdapter,
+            callable=grokcore.component.provideAdapter,
             args=(method_view, adapts, Interface, name))
 
         config.action(
