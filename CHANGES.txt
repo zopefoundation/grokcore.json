@@ -4,14 +4,12 @@ Changes
 1.2 (unreleased)
 ================
 
-- Nothing changed yet.
-
+- Use update grokcore.component api.
 
 1.1 (2011-01-02)
 ================
 
 - Fixed setup.py namespace issue.
-
 
 1.0 (2010-11-03)
 ================
