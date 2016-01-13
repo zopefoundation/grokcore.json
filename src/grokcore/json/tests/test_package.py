@@ -1,7 +1,9 @@
+import doctest
 import re
 import unittest
 from pkg_resources import resource_listdir
-from zope.testing import doctest, cleanup, renormalizing
+
+from zope.testing import cleanup, renormalizing
 
 
 def cleanUpZope(test):
@@ -12,9 +14,9 @@ checker = renormalizing.RENormalizing([
     # str(Exception) has changed from Python 2.4 to 2.5 (due to
     # Exception now being a new-style class).  This changes the way
     # exceptions appear in traceback printouts.
-    (re.compile(r"ConfigurationExecutionError: <class '([\w.]+)'>:"),
-                r'ConfigurationExecutionError: \1:'),
-    ])
+    (re.compile(
+        r"ConfigurationExecutionError: <class '([\w.]+)'>:"),
+        r'ConfigurationExecutionError: \1:')])
 
 
 def suiteFromPackage(name):
@@ -29,14 +31,15 @@ def suiteFromPackage(name):
             continue
 
         dottedname = 'grokcore.json.tests.%s.%s' % (name, filename[:-3])
-        test = doctest.DocTestSuite(dottedname,
-                                    tearDown=cleanUpZope,
-                                    checker=checker,
-                                    optionflags=doctest.ELLIPSIS+
-                                    doctest.NORMALIZE_WHITESPACE)
+        test = doctest.DocTestSuite(
+            dottedname,
+            tearDown=cleanUpZope,
+            checker=checker,
+            optionflags=doctest.ELLIPSIS + doctest.NORMALIZE_WHITESPACE)
 
         suite.addTest(test)
     return suite
+
 
 def test_suite():
     suite = unittest.TestSuite()
