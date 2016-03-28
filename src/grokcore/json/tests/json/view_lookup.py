@@ -3,7 +3,8 @@
 The JSON grokker registers a view for each method of the JSON class.
 So we should be able to search for view by method name.
 
-  >>> grok.testing.grok(__name__)
+  >>> from grokcore.json import testing
+  >>> testing.grok(__name__)
   >>> mammoth = Mammoth()
   >>> from zope.publisher.browser import TestRequest
   >>> request = TestRequest()
