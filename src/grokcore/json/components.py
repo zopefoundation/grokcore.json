@@ -24,12 +24,12 @@ from zope.publisher.publish import mapply
 
 import simplejson
 import grokcore.view
-from zope.interface import implements
+from zope.interface import implementer
 
 
+@implementer(grokcore.view.IGrokSecurityView)
 class JSON(BrowserPage, grokcore.view.ViewSupport):
     """Base class for JSON views in Grok applications."""
-    implements(grokcore.view.IGrokSecurityView)
 
     def __call__(self):
         view_name = self.__view_name__
