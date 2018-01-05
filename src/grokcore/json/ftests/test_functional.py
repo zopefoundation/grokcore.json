@@ -1,14 +1,21 @@
 import doctest
+import grokcore.json
 import re
 import unittest
+import zope.app.wsgi.testlayer
+import zope.testbrowser.wsgi
+
 from pkg_resources import resource_listdir
-
+from zope.app.wsgi.testlayer import http
 from zope.testing import renormalizing
-from zope.app.wsgi.testlayer import BrowserLayer, http
-import grokcore.json
 
 
-FunctionalLayer = BrowserLayer(grokcore.json)
+class Layer(
+        zope.testbrowser.wsgi.TestBrowserLayer,
+        zope.app.wsgi.testlayer.BrowserLayer):
+    pass
+
+layer = Layer(grokcore.view, allowTearDown=True)
 
 
 checker = renormalizing.RENormalizing([
@@ -50,13 +57,16 @@ def suiteFromPackage(name):
         test = doctest.DocTestSuite(
             dottedname,
             checker=checker,
-            extraglobs=dict(http_call=http_call,
-                            http=http,
-                            getRootFolder=FunctionalLayer.getRootFolder),
-            optionflags=(doctest.ELLIPSIS +
-                         doctest.NORMALIZE_WHITESPACE +
-                         doctest.REPORT_NDIFF))
-        test.layer = FunctionalLayer
+            extraglobs=dict(
+                http_call=http_call,
+                http=http,
+                getRootFolder=layer.getRootFolder),
+            optionflags=(
+                doctest.ELLIPSIS +
+                doctest.NORMALIZE_WHITESPACE +
+                doctest.REPORT_NDIFF +
+                renormalizing.IGNORE_EXCEPTION_MODULE_IN_PYTHON2))
+        test.layer = layer
 
         suite.addTest(test)
     return suite
@@ -67,6 +77,7 @@ def test_suite():
     for name in ['json']:
         suite.addTest(suiteFromPackage(name))
     return suite
+
 
 if __name__ == '__main__':
     unittest.main(defaultTest='test_suite')

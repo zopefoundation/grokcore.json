@@ -1,8 +1,8 @@
 import doctest
 import re
 import unittest
-from pkg_resources import resource_listdir
 
+from pkg_resources import resource_listdir
 from zope.testing import cleanup, renormalizing
 
 
@@ -35,8 +35,10 @@ def suiteFromPackage(name):
             dottedname,
             tearDown=cleanUpZope,
             checker=checker,
-            optionflags=doctest.ELLIPSIS + doctest.NORMALIZE_WHITESPACE)
-
+            optionflags=(
+                doctest.ELLIPSIS +
+                doctest.NORMALIZE_WHITESPACE +
+                renormalizing.IGNORE_EXCEPTION_MODULE_IN_PYTHON2))
         suite.addTest(test)
     return suite
 
@@ -46,6 +48,7 @@ def test_suite():
     for name in ['json']:
         suite.addTest(suiteFromPackage(name))
     return suite
+
 
 if __name__ == '__main__':
     unittest.main(defaultTest='test_suite')

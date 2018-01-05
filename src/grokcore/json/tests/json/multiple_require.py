@@ -5,7 +5,9 @@ Multiple calls of grok.require in one class are not allowed.
   >>> testing.grok(__name__)
   Traceback (most recent call last):
     ...
-  GrokError: grok.require was called multiple times in <class 'grokcore.json.tests.json.multiple_require.MultipleJSON'>. It may only be set once for a class.
+  martian.error.GrokError: grok.require was called multiple times in \
+  <class 'grokcore.json.tests.json.multiple_require.MultipleJSON'>. It may \
+  only be set once for a class.
 
 """
 import grokcore.json as grok
