@@ -7,8 +7,8 @@ whether it's hooked up at all:
   >>> testing.grok(__name__)
   Traceback (most recent call last):
     ...
-  GrokError: No module-level context for
-  <class 'grokcore.json.tests.json.nocontext.TestJSON'>, please use the
+  martian.error.GrokError: No module-level context for \
+  <class 'grokcore.json.tests.json.nocontext.TestJSON'>, please use the \
   'context' directive.
 
 """

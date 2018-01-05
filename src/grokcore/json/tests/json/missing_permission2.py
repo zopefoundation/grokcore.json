@@ -6,8 +6,11 @@ before it can be used in @grok.require().
   >>> from grokcore.json import testing
   >>> testing.grok(__name__)
   Traceback (most recent call last):
-  ConfigurationExecutionError: martian.error.GrokError: Undefined permission 'doesnt.exist' in <class 'grokcore.json.tests.json.missing_permission2.MissingPermission'>. Use grok.Permission first.
   ...
+  zope.configuration.config.ConfigurationExecutionError: \
+  martian.error.GrokError: Undefined permission 'doesnt.exist' in \
+  <class 'grokcore.json.tests.json.missing_permission2.MissingPermission'>. \
+  Use grok.Permission first...
 
 """
 
