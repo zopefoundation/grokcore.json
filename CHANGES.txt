@@ -4,8 +4,7 @@ Changes
 3.0.1 (unreleased)
 ==================
 
-- Nothing changed yet.
-
+- Fixed a test error that somehow was missed by travis and tox.
 
 3.0.0 (2018-01-05)
 ==================
