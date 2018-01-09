@@ -57,7 +57,6 @@ setup(
         'grokcore.view',
         'martian',
         'setuptools',
-        'simplejson',
         'zope.component',
         'zope.interface',
         'zope.publisher',

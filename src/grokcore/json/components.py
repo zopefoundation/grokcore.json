@@ -21,8 +21,7 @@ provided here.
 
 from zope.publisher.browser import BrowserPage
 from zope.publisher.publish import mapply
-
-import simplejson
+import json
 import grokcore.view
 from zope.interface import implementer
 
@@ -36,5 +35,4 @@ class JSON(BrowserPage, grokcore.view.ViewSupport):
         method = getattr(self, view_name)
         method_result = mapply(method, (), self.request)
         self.request.response.setHeader('Content-Type', 'application/json')
-        return simplejson.dumps(method_result)
-
+        return json.dumps(method_result)
