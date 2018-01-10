@@ -1,6 +1,7 @@
 import doctest
 import grokcore.json
 import re
+import six
 import unittest
 import zope.app.wsgi.testlayer
 import zope.testbrowser.wsgi
@@ -15,7 +16,7 @@ class Layer(
         zope.app.wsgi.testlayer.BrowserLayer):
     pass
 
-layer = Layer(grokcore.view, allowTearDown=True)
+layer = Layer(grokcore.json, allowTearDown=True)
 
 
 checker = renormalizing.RENormalizing([
@@ -24,7 +25,7 @@ checker = renormalizing.RENormalizing([
     ])
 
 
-def http_call(method, path, data=None, **kw):
+def http_call(app, method, path, data=None, handle_errors=False, **kw):
     """Function to help make RESTful calls.
 
     method - HTTP method to use
@@ -41,7 +42,12 @@ def http_call(method, path, data=None, **kw):
     if data is not None:
         request_string += '\r\n'
         request_string += data
-    return http(request_string, handle_errors=False)
+
+    if six.PY3:
+        request_string = request_string.encode()
+
+    result = http(app, request_string, handle_errors=handle_errors)
+    return result
 
 
 def suiteFromPackage(name):
@@ -58,9 +64,9 @@ def suiteFromPackage(name):
             dottedname,
             checker=checker,
             extraglobs=dict(
+                getRootFolder=layer.getRootFolder,
                 http_call=http_call,
-                http=http,
-                getRootFolder=layer.getRootFolder),
+                wsgi_app=layer.make_wsgi_app),
             optionflags=(
                 doctest.ELLIPSIS +
                 doctest.NORMALIZE_WHITESPACE +
