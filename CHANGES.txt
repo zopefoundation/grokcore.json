@@ -4,8 +4,9 @@ Changes
 3.0.2 (unreleased)
 ==================
 
-- Nothing changed yet.
+- Additional test fixes.
 
+- Remove dependency on simplejson.
 
 3.0.1 (2018-01-05)
 ==================
