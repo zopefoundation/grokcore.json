@@ -29,7 +29,7 @@ methods with names that start with an underscore are not::
   Traceback (most recent call last):
   ...
   zope.interface.interfaces.ComponentLookupError: \
-  ((<grokcore.json.tests.json.view_lookup.Mammoth object at ...>, \
+  ((<grokcore.json.tests.base.json.view_lookup.Mammoth object at ...>, \
   <zope.publisher.browser.TestRequest instance URL=http://127.0.0.1>), \
   <InterfaceClass zope.interface.Interface>, '_private')
 
@@ -41,7 +41,7 @@ been fixed::
   Traceback (most recent call last):
   ...
   zope.interface.interfaces.ComponentLookupError: \
-  ((<grokcore.json.tests.json.view_lookup.Mammoth object at ...>, \
+  ((<grokcore.json.tests.base.json.view_lookup.Mammoth object at ...>, \
   <zope.publisher.browser.TestRequest instance URL=http://127.0.0.1>), \
   <InterfaceClass zope.interface.Interface>, '__call__')
 
@@ -52,7 +52,7 @@ baseclass (BrowserPage) are not registered as views::
   Traceback (most recent call last):
   ...
   zope.interface.interfaces.ComponentLookupError: \
-  ((<grokcore.json.tests.json.view_lookup.Mammoth object at ...>, \
+  ((<grokcore.json.tests.base.json.view_lookup.Mammoth object at ...>, \
   <zope.publisher.browser.TestRequest instance URL=http://127.0.0.1>), \
   <InterfaceClass zope.interface.Interface>, 'browserDefault')
 
@@ -60,7 +60,7 @@ baseclass (BrowserPage) are not registered as views::
   Traceback (most recent call last):
   ...
   zope.interface.interfaces.ComponentLookupError: \
-  ((<grokcore.json.tests.json.view_lookup.Mammoth object at ...>, \
+  ((<grokcore.json.tests.base.json.view_lookup.Mammoth object at ...>, \
   <zope.publisher.browser.TestRequest instance URL=http://127.0.0.1>), \
   <InterfaceClass zope.interface.Interface>, 'publishTraverse')
 

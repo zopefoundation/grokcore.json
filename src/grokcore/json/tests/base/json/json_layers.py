@@ -33,7 +33,7 @@ The 'another' view on the default skin, not available on the my_json::
   Traceback (most recent call last):
   ...
   zope.interface.interfaces.ComponentLookupError: \
-  ((<grokcore.json.tests.json.json_layers.Mammoth object at ...>, \
+  ((<grokcore.json.tests.base.json.json_layers.Mammoth object at ...>, \
   <zope.publisher.browser.TestRequest instance URL=http://127.0.0.1>), \
   <InterfaceClass zope.interface.Interface>, 'public')
 
@@ -44,7 +44,7 @@ the my_json skin::
   Traceback (most recent call last):
   ...
   zope.interface.interfaces.ComponentLookupError: \
-  ((<grokcore.json.tests.json.json_layers.Mammoth object at ...>, \
+  ((<grokcore.json.tests.base.json.json_layers.Mammoth object at ...>, \
   <zope.publisher.browser.TestRequest instance URL=http://127.0.0.1>), \
   <InterfaceClass zope.interface.Interface>, 'another')
 

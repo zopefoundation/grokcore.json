@@ -8,7 +8,7 @@ before it can be used in grok.require() in an JSON class.
   ...
   zope.configuration.config.ConfigurationExecutionError: \
   martian.error.GrokError: Undefined permission 'doesnt.exist' in \
-  <class 'grokcore.json.tests.json.missing_permission.MissingPermission'>. \
+  <class 'grokcore.json.tests.base.json.missing_permission.MissingPermission'>. \
   Use grok.Permission first...
 
 """
