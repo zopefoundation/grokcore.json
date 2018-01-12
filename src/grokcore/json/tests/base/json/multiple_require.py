@@ -6,7 +6,7 @@ Multiple calls of grok.require in one class are not allowed.
   Traceback (most recent call last):
     ...
   martian.error.GrokError: grok.require was called multiple times in \
-  <class 'grokcore.json.tests.json.multiple_require.MultipleJSON'>. It may \
+  <class 'grokcore.json.tests.base.json.multiple_require.MultipleJSON'>. It may \
   only be set once for a class.
 
 """

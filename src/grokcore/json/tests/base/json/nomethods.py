@@ -4,7 +4,7 @@
   Traceback (most recent call last):
     ...
   martian.error.GrokError: \
-  <class 'grokcore.json.tests.json.nomethods.RemoteCaveman'> does not \
+  <class 'grokcore.json.tests.base.json.nomethods.RemoteCaveman'> does not \
   define any public methods. Please add methods to this class to enable \
   its registration.
 

@@ -8,7 +8,7 @@ whether it's hooked up at all:
   Traceback (most recent call last):
     ...
   martian.error.GrokError: No module-level context for \
-  <class 'grokcore.json.tests.json.nocontext.TestJSON'>, please use the \
+  <class 'grokcore.json.tests.base.json.nocontext.TestJSON'>, please use the \
   'context' directive.
 
 """
