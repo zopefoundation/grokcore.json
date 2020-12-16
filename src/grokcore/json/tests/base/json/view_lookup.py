@@ -76,10 +76,10 @@ class MammothView(grok.JSON):
     grok.context(Mammoth)
 
     def run(self):
-        return { 'me': 'grok' }
+        return {'me': 'grok'}
 
     def another(self):
-        return { 'another': 'grok'}
+        return {'another': 'grok'}
 
 
 class SecondMammothView(grok.JSON):

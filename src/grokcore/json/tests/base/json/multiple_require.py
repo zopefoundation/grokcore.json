@@ -9,7 +9,7 @@ Multiple calls of grok.require in one class are not allowed.
   <class 'grokcore.json.tests.base.json.multiple_require.MultipleJSON'>. It may \
   only be set once for a class.
 
-"""
+"""  # noqa: E501 line too long
 import grokcore.json as grok
 import zope.interface
 
