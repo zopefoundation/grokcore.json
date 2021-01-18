@@ -25,7 +25,7 @@ class IBaseClasses(grokcore.component.interfaces.IBaseClasses,
                    grokcore.security.interfaces.IBaseClasses,
                    grokcore.view.interfaces.IBaseClasses):
     JSON = Attribute("Base class for JSON methods.")
-    
+
 
 class IGrokcoreJSONAPI(grokcore.component.interfaces.IGrokcoreComponentAPI,
                        grokcore.security.interfaces.IGrokcoreSecurityAPI,
