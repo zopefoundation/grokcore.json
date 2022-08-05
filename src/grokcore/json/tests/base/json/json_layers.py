@@ -71,8 +71,9 @@ Like with "normal" view, layers can aggregate view "methods"::
 
 """
 
-import grokcore.json as grok
 from zope.publisher.interfaces.browser import IBrowserRequest
+
+import grokcore.json as grok
 
 
 class IMyJSONLayer(IBrowserRequest):

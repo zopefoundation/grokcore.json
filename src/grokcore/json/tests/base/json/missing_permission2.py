@@ -16,8 +16,9 @@ before it can be used in @grok.require().
 
 """  # noqa: E501 line too long
 
-import grokcore.json as grok
 import zope.interface
+
+import grokcore.json as grok
 
 
 class MissingPermission(grok.JSON):

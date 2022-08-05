@@ -16,6 +16,7 @@ before it can be used in grok.require() in an JSON class.
 """  # noqa: E501 line too long
 
 import zope.interface
+
 import grokcore.json as grok
 
 

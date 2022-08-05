@@ -7,8 +7,9 @@ by a method-level directive) doesn't raise an error:
 
 """
 
-import grokcore.json as grok
 import zope.interface
+
+import grokcore.json as grok
 
 
 class Permission(grok.Permission):

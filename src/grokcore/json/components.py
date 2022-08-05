@@ -19,11 +19,13 @@ provided here.
 
 """
 
+import json
+
+from zope.interface import implementer
 from zope.publisher.browser import BrowserPage
 from zope.publisher.publish import mapply
-import json
+
 import grokcore.view
-from zope.interface import implementer
 
 
 @implementer(grokcore.view.IGrokSecurityView)

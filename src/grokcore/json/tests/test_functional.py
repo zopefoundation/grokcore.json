@@ -1,12 +1,14 @@
 import doctest
-import grokcore.json
-import six
 import unittest
+
+import six
+from pkg_resources import resource_listdir
+
 import zope.app.wsgi.testlayer
 import zope.testbrowser.wsgi
-
-from pkg_resources import resource_listdir
 from zope.app.wsgi.testlayer import http
+
+import grokcore.json
 
 
 class Layer(
