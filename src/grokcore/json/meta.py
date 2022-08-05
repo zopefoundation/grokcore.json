@@ -14,13 +14,15 @@
 """JSON Grokking elements.
 """
 import martian
-import grokcore.component
-from grokcore.component import context
-from grokcore.security import require
-from grokcore.json import JSON
-from grokcore.view import layer, make_checker
 from zope.interface import Interface
 from zope.publisher.interfaces.browser import IDefaultBrowserLayer
+
+import grokcore.component
+from grokcore.component import context
+from grokcore.json import JSON
+from grokcore.security import require
+from grokcore.view import layer
+from grokcore.view import make_checker
 
 
 class JSONGrokker(martian.MethodGrokker):

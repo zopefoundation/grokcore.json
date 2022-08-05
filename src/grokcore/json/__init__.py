@@ -12,14 +12,14 @@
 #
 ##############################################################################
 
+from zope.interface import moduleProvides
+
 from grokcore.component import *
+from grokcore.json.components import JSON
+from grokcore.json.interfaces import IGrokcoreJSONAPI
 from grokcore.security import *
 from grokcore.view import *
 
 
-from grokcore.json.components import JSON
-
-from grokcore.json.interfaces import IGrokcoreJSONAPI
-from zope.interface import moduleProvides
 moduleProvides(IGrokcoreJSONAPI)
 __all__ = list(IGrokcoreJSONAPI)
