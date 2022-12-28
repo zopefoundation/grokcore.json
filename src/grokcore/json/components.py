@@ -21,11 +21,10 @@ provided here.
 
 import json
 
+import grokcore.view
 from zope.interface import implementer
 from zope.publisher.browser import BrowserPage
 from zope.publisher.publish import mapply
-
-import grokcore.view
 
 
 @implementer(grokcore.view.IGrokSecurityView)

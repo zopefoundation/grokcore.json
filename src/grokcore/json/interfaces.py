@@ -13,12 +13,11 @@
 ##############################################################################
 """Grok interfaces
 """
-from zope.interface import Attribute
-
 # Expose interfaces from grokcore.* packages as well:
 import grokcore.component.interfaces
 import grokcore.security.interfaces
 import grokcore.view.interfaces
+from zope.interface import Attribute
 
 
 class IBaseClasses(grokcore.component.interfaces.IBaseClasses,
