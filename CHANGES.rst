@@ -1,7 +1,7 @@
 Changes
 *******
 
-4.1 (unreleased)
+4.1 (2023-09-13)
 ================
 
 - Final release before taking the package out of maintenance and archiving the
