@@ -4,8 +4,8 @@ Changes
 4.1 (unreleased)
 ================
 
-- Nothing changed yet.
-
+- Final release before taking the package out of maintenance and archiving the
+  repository. No features have changed.
 
 4.0 (2023-08-28)
 ================
@@ -13,7 +13,6 @@ Changes
 - Drop support for Python 2.7, 3.4, 3.5, 3.6.
 
 - Add support for Python 3.7, 3.8, 3.9, 3.10, 3.11.
-
 
 3.0.3 (2018-01-12)
 ==================
